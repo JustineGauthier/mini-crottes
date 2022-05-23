@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   belongs_to :animal
 
   def new
-    @bookmark = Bookmark.new
+    @booking = Booking.new
   end
 
   def create
