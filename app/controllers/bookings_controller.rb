@@ -2,6 +2,10 @@ class BookingsController < ApplicationController
   belongs_to :user
   belongs_to :animal
 
+  def index
+    @bookings = Booking.all
+  end
+
   def new
     @booking = Booking.new
   end
