@@ -1,6 +1,6 @@
 <ul>
   <% @animals.each do |animal| %>
-    <li><%= animal.name %></li>
+    <li><%= link_to animal.name, animal_path(animal) %></li>
   <% end %>
   <%= link_to "Remove",
                   animal_path(animal),
