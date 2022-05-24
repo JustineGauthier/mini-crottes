@@ -1,4 +1,11 @@
-<h1><%= @animal.name %></h1>
+<h1>Wow, this <%= @animal.species.downcase %> is handsome!</h1>
 <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
+<h2>Want to book <%= @animal.name.capitalize %>?</h2>
+<p>A few information about this cutie: <%= @animal.description %> <br>For only: <%= @animal.price %> €/day.</p>
 <%# <%= link_to "Book this mini crotte !", booking_path(animal) %>
+<%= link_to "Remove",
+                  animal_path(animal),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+<%= link_to 'Back', animals_path %>
 <%= link_to "All mini crottes", animals_path %>
