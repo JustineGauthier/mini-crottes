@@ -1,2 +1,7 @@
 <h1><%= @animal.name %></h1>
+<%= link_to "Remove",
+                  animal_path(animal),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+<%= link_to 'Back', animals_path %>
 <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
