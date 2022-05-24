@@ -1,0 +1,23 @@
+<%= simple_form_for(@animal) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "name" }%>
+    <%= f.input :species,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "species" }%>
+    <%= f.input :description,
+                input_html: { autocomplete: "description" } %>
+    <%= f.input :price,
+            required: true,
+            autofocus: true,
+            input_html: { autocomplete: "price" }%>
+    <%= f.input :photo, as: :file %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Add this mini crotte" %>
+  </div>
+<% end %>

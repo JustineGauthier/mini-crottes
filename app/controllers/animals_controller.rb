@@ -14,9 +14,11 @@ class AnimalsController < ApplicationController
 
   def create
     @animal = Animal.new(animal_params)
-    @animal.save
-
-    redirect_to animals_path
+    if @animal.save!
+      redirect_to animal_path(@animal)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -38,10 +40,10 @@ class AnimalsController < ApplicationController
   private
 
   def animal_params
-    params.require(:animal).permit(:name, :species, :description, :price)
+    params.require(:animal).permit(:name, :species, :description, :price, :photo)
   end
 
   def set_animal
-    @animal = animal.find(params[:id])
+    @animal = Animal.find(params[:id])
   end
 end
