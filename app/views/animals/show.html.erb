@@ -1,2 +1,4 @@
 <h1><%= @animal.name %></h1>
 <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
+<%# <%= link_to "Book this mini crotte !", booking_path(animal) %>
+<%= link_to "All mini crottes", animals_path %>
