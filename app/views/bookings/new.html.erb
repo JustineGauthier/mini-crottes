@@ -1,4 +1,4 @@
-<%= simple_form_for [ @animal, @booking ] do |f| %>
+<%= simple_form_for [ @animal, @booking] , url: dashboard_path, method: :get do |f| %>
   <%= f.input :date, as: :date, html5: true %>
   <%= f.submit "Book this cutie!", class: "btn btn-primary" %>
 <% end %>

@@ -1,7 +1,7 @@
-<h1>Wow, this <%= @animal.species.downcase %> is handsome!</h1>
+<h1>Wow, this <%= @animal.species.downcase %> is the cutest!</h1>
 <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
 <h2>Want to book <%= @animal.name.capitalize %>?</h2>
-<p>A few information about this cutie: <%= @animal.description %> <br>For only: <%= @animal.price %> €/day.</p>
+<p>A few things to know about this cutie: <%= @animal.description %> <br>For only: <%= @animal.price %> €/day.</p>
 <ul>
 <li><%= link_to 'Book this cutie', new_animal_booking_path(@animal) %></li>
 <li><%= link_to "Back to the list", animals_path %></li>

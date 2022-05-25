@@ -1,8 +1,4 @@
-<h1>Feel free to choose your action!</h1>
-
-<p>What's new with <%= @animal.name.capitalize %> ?</p>
-
-<p>Update:</p>
+<h1>What's new with <%= @animal.name.capitalize %> ?</h1>
 
 <%= form_for(@animal) do |f| %>
   <%= f.label :name %>
@@ -16,7 +12,7 @@
   <%= f.submit %>
 <% end %>
 
-<p>Nop, I don't want this buddy anymore: <%= link_to "Adios amigo!",
+<p>I don't want this cuttie anymore: <%= link_to "Adios amigo!",
                   animal_path(@animal),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %></p>
