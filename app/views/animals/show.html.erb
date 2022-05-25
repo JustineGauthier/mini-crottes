@@ -2,6 +2,7 @@
 <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
 <h2>Want to book <%= @animal.name.capitalize %>?</h2>
 <p>A few information about this cutie: <%= @animal.description %> <br>For only: <%= @animal.price %> €/day.</p>
-<%= link_to "Update", edit_animal_url(@animal) %>
-<%= link_to "Back to the list", animals_path %>
-<%= link_to 'Book this cutie', new_animal_booking_path(@animal) %>
+<ul>
+<li><%= link_to 'Book this cutie', new_animal_booking_path(@animal) %></li>
+<li><%= link_to "Back to the list", animals_path %></li>
+</ul>
