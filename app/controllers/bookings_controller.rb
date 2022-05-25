@@ -1,10 +1,5 @@
 class BookingsController < ApplicationController
-  belongs_to :user
-  belongs_to :animal
-
-  def index
-    @bookings = Booking.all
-  end
+  before_action :set_user
 
   def new
     @booking = Booking.new
@@ -13,6 +8,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @animal = Animal.find(params[:animal_id])
+    @booking.user = current_user
     @booking.animal = @animal
     if @booking.save
       redirect_to animal_path(@animal)
@@ -32,4 +28,5 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:date)
   end
+
 end
