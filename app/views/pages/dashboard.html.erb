@@ -1,0 +1,30 @@
+<h1>Hey <%= @user.name %> !</h1>
+<h2>Here are all your <strong>cutiiiiiies</strong> bookings :</h2>
+<ul>
+  <% @bookings.each do |booking| %>
+    <li><%= cl_image_tag(booking.animal.photo.key,
+      width: 100, height: 100, crop: :fill, gravity: :face) %></li>
+    <li><%= booking.animal.name %></li>
+    <li><%= booking.date %></li>
+    <li><%= link_to "Details", to: animals_path(booking.animal) %></li>
+  <% end %>
+</ul>
+
+<h2>And here, all your <strong>lovables</strong> mini crottes :</h2>
+<ul>
+  <% @animals.each do |animal| %>
+    <li><%= cl_image_tag(animal.photo.key,
+      width: 100, height: 100, crop: :fill, gravity: :face) %></li>
+    <li><%= animal.name %></li>
+    <li><%= link_to "Details", to: animals_path(animal) %></li>
+     <%= link_to "Remove",
+                  animal_path(animal),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    <%= link_to "Update",
+                  animal_path(animal),
+                  method: :update %>
+  <% end %>
+</ul>
+
+<%= link_to "All the mini crottes", to: animals_path %>
