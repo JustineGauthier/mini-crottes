@@ -2,12 +2,5 @@
 <ul>
   <% @animals.each do |animal| %>
     <li><%= link_to animal.name, animal_path(animal) %></li>
-    <%= link_to "Remove",
-                  animal_path(animal),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-    <%= link_to "Update",
-                  animal_path(animal),
-                  method: :update %>
   <% end %>
 </ul>

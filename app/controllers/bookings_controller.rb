@@ -1,5 +1,8 @@
 class BookingsController < ApplicationController
-  before_action :set_user
+
+  def index
+    @bookings = Booking.all
+  end
 
   def new
     @booking = Booking.new
@@ -28,5 +31,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:date)
   end
-
 end

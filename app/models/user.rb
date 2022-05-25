@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :animals
   has_many :bookings, dependent: :destroy
 
-  # validates :name, presence: true, length: { minimum: 3, maximum: 20 }
+  validates :name, presence: true, length: { minimum: 3, maximum: 20 }
 end

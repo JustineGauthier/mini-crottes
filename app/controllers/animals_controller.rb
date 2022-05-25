@@ -26,6 +26,7 @@ class AnimalsController < ApplicationController
   end
 
   def update
+    @animal = Animal.find(params[:id])
     @animal.update(animal_params)
 
     redirect_to animals_path
