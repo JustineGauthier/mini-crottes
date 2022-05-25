@@ -1,6 +1,5 @@
-<%= link_to "Add a mini crotte", new_animal_path %>
 <ul>
   <% @animals.each do |animal| %>
-    <li><%= link_to animal.name, animal_path(animal) %></li>
+  <li><%= link_to animal.name, animal_path(animal) %></li>
   <% end %>
 </ul>

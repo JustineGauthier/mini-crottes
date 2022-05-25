@@ -1,5 +1,5 @@
 <h1>Hey <%= @user.name %> !</h1>
-<h2>Here are all your <strong>cutiiiiiies</strong> bookings :</h2>
+<h2>Here are all your <strong>cuttie</strong> bookings :</h2>
 <ul>
   <% @bookings.each do |booking| %>
     <li><%= cl_image_tag(booking.animal.photo.key,
@@ -10,7 +10,7 @@
   <% end %>
 </ul>
 
-<h2>And here, all your <strong>lovables</strong> mini crottes :</h2>
+<h2>And here, all your <strong>lovable</strong> mini crottes :</h2>
 <ul>
   <% @animals.each do |animal| %>
     <li><%= cl_image_tag(animal.photo.key,
@@ -27,4 +27,6 @@
   <% end %>
 </ul>
 
-<%= link_to "All the mini crottes", animals_path, class: "nav-link" %>
+<%= link_to "Add a mini crotte", new_animal_path %>
+<br>
+<%= link_to "Go back", animals_path, class: "nav-link" %>
