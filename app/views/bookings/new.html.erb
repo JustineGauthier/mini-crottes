@@ -1,0 +1,5 @@
+<%= simple_form_for [ @animal, @booking ] do |f| %>
+  <%= f.input :content %>
+   <%= f.association :user %>
+  <%= f.submit "Book this cutie!", class: "btn btn-primary" %>
+<% end %>
