@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :animals, through: :bookings
   has_many :bookings, dependent: :destroy
-
+  
   validates :name, presence: true, length: { minimum: 3, maximum: 20 }
 end
