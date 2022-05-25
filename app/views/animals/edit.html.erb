@@ -1,0 +1,24 @@
+<h1>Feel free to choose your action!</h1>
+
+<p>What's new with <%= @animal.name.capitalize %> ?</p>
+
+<p>Update:</p>
+
+<%= form_for(@animal) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :species %>
+  <%= f.text_field :species %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+  <%= f.submit %>
+<% end %>
+
+<p>Nop, I don't want this buddy anymore: <%= link_to "Adios amigo!",
+                  animal_path(@animal),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></p>
+
+<p>Oops, missclick! <%= link_to 'Go back', animals_path %></p>
