@@ -1,6 +1,6 @@
 <h1>What's new with <%= @animal.name.capitalize %> ?</h1>
 
-<%= form_for(@animal) do |f| %>
+<%= simple_form_for(@animal) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :species %>
@@ -15,6 +15,7 @@
 <p>I don't want this cuttie anymore: <%= link_to "Adios amigo!",
                   animal_path(@animal),
                   method: :delete,
-                  data: { confirm: "Are you sure?" } %></p>
+                  data: { confirm: "Are you sure?" },
+                  class: "nav-link" %></p>
 
 <p>Oops, missclick! <%= link_to 'Go back', animals_path %></p>

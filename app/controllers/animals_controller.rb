@@ -35,17 +35,15 @@ def index
   end
 
   def update
-    @animal = Animal.find(params[:id])
     @animal.update(animal_params)
 
-    redirect_to animals_path
+    redirect_to dashboard_path, notice: "You're mini crotte has been updated succefully "
   end
 
   def destroy
-    @animal = Animal.find(params[:id])
     @animal.destroy
 
-    redirect_to animals_path
+    redirect_to dashboard_path, notice: "You're mini crotte has been destroyed succefully "
   end
 
   private
