@@ -1,8 +1,14 @@
 class AnimalsController < ApplicationController
   before_action :set_animal, only: %i[show edit update destroy]
 
-def index
-  @animals = Animal.all
+  def index
+    if params[:query].present?
+      sql_query = "species ILIKE :query OR name ILIKE :query"
+      @animals = Animal.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @animals = Animal.all
+    end
+
     @animals = Animal.geocoded
     @markers = @animals.map do |animal|
       {
@@ -10,8 +16,11 @@ def index
         lng: animal.longitude,
         info_window: render_to_string(partial: "info_window", locals: { animal: animal }),
         # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS")
-      }
+      }    
     end
+  end
+
+
   end
 
   def show
