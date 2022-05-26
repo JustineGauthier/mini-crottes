@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.animal = @animal
     if @booking.save
-      redirect_to animal_path(@animal)
+      redirect_to dashboard_path
     else
       render 'animal'
     end
