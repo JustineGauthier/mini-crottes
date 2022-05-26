@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [ :index, :destroy ]
   get 'dashboard', to: 'pages#dashboard'
+  get 'searchbar', to: 'search#searchbar'
 end
