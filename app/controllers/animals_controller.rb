@@ -2,7 +2,12 @@ class AnimalsController < ApplicationController
   before_action :set_animal, only: %i[show edit update destroy]
 
   def index
-    @animals = Animal.all
+    if params[:query].present?
+      sql_query = "species ILIKE :query OR name ILIKE :query"
+      @animals = Animal.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @animals = Animal.all
+    end
   end
 
   def show
