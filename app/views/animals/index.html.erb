@@ -1,19 +1,30 @@
-<ul>
-  <% @animals.each do |animal| %>
-  <div class="card" style="width: 18rem;">
-   <div class="card-body">
-      <h5 class="card-title"><%= animal.name %></h5>
-      <h6 class="card-subtitle mb-2 text-muted"><%= animal.species %></h6>
-      <p class="card-text"><%= animal.description %></p>
-      <p class="card-text"><%= animal.price %></p>
-      <a href="#" class="card-link"><%= link_to animal.name, animal_path(animal) %></a>
+<div class="container">
+  <div class='row'>
+    <div class="col-8 px-2">
+      <div class='row row-cols-3'>
+        <% @animals.each do |animal| %>
+          <div class="col">
+            <div class= "card border-dark mb-3 .h-100">
+              <%= link_to animal_path(animal) do %>
+                  <img class="card-img-top" src=<%= cl_image_path animal.photo.key, height: 200, width: 200, crop: :fill %> alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= animal.name %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= animal.species %></h6>
+                    <p class="card-text"><%= animal.description %></p>
+                    <p class="card-text"><%= animal.price %>€/day</p>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class='col-4'>
+      <div style="width: 100%; height: 100vh;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
   </div>
-  <% end %>
-</ul>
-
-<div style="width: 100%; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
