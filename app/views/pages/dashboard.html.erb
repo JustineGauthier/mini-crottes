@@ -4,14 +4,14 @@
   <% @bookings.each do |booking| %>
     <li><%= cl_image_tag(booking.animal.photo.key,
       width: 100, height: 100, crop: :fill, gravity: :face) %></li>
-    <li>You booked: <%= booking.animal.name %>, yay!</li>
-    <li>For this day: <%= booking.date %>.</li>
-    <li>View all the <%= link_to "details", animal_path(booking.animal) %>.</li>
+    <li><%= booking.animal.name %></li>
+    <li><%= booking.date %></li>
+    <li><%= link_to "Details", animal_path(booking.animal), class: "nav-link" %></li>
 
-    <li>Changed your mind ? <%= link_to "Bye!",
+    <li><%= link_to "Remove",
                 booking_path(booking),
                 method: :delete,
-                data: { confirm: "Are you sure?" }%></li>
+                data: { confirm: "Are you sure?" } %></li>
   <% end %>
 </ul>
 
@@ -21,11 +21,13 @@
     <li><%= cl_image_tag(animal.photo.key,
       width: 100, height: 100, crop: :fill, gravity: :face) %></li>
     <li><%= animal.name %></li>
-    <li><%= link_to "Remove",
+    <li><%= link_to "Details", animal_path(animal), class: "nav-link" %></li>
+     <%= link_to "Remove",
                   animal_path(animal),
                   method: :delete,
-                  data: { confirm: "Are you sure?" }%></li>
-    <li><%= link_to "Update", edit_animal_path(animal)%></li>
+                  data: { confirm: "Are you sure?" },
+                  class: "nav-link" %>
+    <%= link_to "Update", edit_animal_path(animal), class: "nav-link" %>
   <% end %>
 </ul>
 

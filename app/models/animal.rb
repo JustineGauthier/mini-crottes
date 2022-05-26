@@ -7,5 +7,5 @@ class Animal < ApplicationRecord
   belongs_to :user
 
   validates :name, uniqueness: true, presence: true
-  validates :description, :species, :price, presence: true
+  validates :description, :species, :price, :address, presence: true
 end
