@@ -6,7 +6,7 @@
     <h2>Want to book <%= @animal.name.capitalize %>?</h2>
     <p>A few things to know about this cutie: <%= @animal.description %> <br>Price: <%= @animal.price %> €/day.</p>
     <ul>
-      <a href= "<%= dashboard_path %>" class="btn btn-outline-dark">Book this cutie!</a>
+      <a href= "<%= new_animal_booking_path(@animal) %>" class="btn btn-outline-dark">Book this cutie!</a>
       <a href= "<%= animals_path %>" class="btn btn-outline-dark">Back to the list</a>
     </ul>
     </div>

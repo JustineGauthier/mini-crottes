@@ -8,6 +8,19 @@ class AnimalsController < ApplicationController
     else
       @animals = Animal.all
     end
+
+    @animals = Animal.geocoded
+    @markers = @animals.map do |animal|
+      {
+        lat: animal.latitude,
+        lng: animal.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { animal: animal }),
+        # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS")
+      }    
+    end
+  end
+
+
   end
 
   def show
@@ -31,23 +44,21 @@ class AnimalsController < ApplicationController
   end
 
   def update
-    @animal = Animal.find(params[:id])
     @animal.update(animal_params)
 
-    redirect_to animals_path
+    redirect_to dashboard_path, notice: "You're mini crotte has been updated succefully "
   end
 
   def destroy
-    @animal = Animal.find(params[:id])
     @animal.destroy
 
-    redirect_to animals_path
+    redirect_to dashboard_path, notice: "You're mini crotte has been destroyed succefully "
   end
 
   private
 
   def animal_params
-    params.require(:animal).permit(:name, :species, :description, :price, :photo)
+    params.require(:animal).permit(:name, :species, :description, :price, :photo, :address)
   end
 
   def set_animal
