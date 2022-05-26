@@ -8,4 +8,6 @@ class Animal < ApplicationRecord
 
   validates :name, uniqueness: true, presence: true
   validates :description, :species, :price, presence: true
+  validates :photo, presence: true
+
 end
