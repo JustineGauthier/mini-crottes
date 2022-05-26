@@ -7,6 +7,10 @@
     <li><%= booking.animal.name %></li>
     <li><%= booking.date %></li>
     <li><%= link_to "Details", to: animals_path(booking.animal) %></li>
+    <li><%= link_to "Remove",
+                booking_path(booking),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %></li>
   <% end %>
 </ul>
 
