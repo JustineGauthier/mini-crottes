@@ -14,7 +14,7 @@ class AnimalsController < ApplicationController
       {
         lat: animal.latitude,
         lng: animal.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { animal: animal }),
+        info_window: render_to_string(partial: "info_window", locals: { animal: animal })
         # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS")
       }
     end
@@ -30,8 +30,8 @@ class AnimalsController < ApplicationController
   def create
     @animal = Animal.new(animal_params)
     @animal.user = current_user
-    if @animal.save!
-      redirect_to animal_path(@animal)
+    if @animal.save
+      redirect_to dashboard_path
     else
       render :new
     end

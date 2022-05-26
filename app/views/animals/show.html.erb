@@ -4,7 +4,9 @@
     <h1>Wow, this <%= @animal.species.downcase %> is the cutest!</h1>
     <%= cl_image_tag @animal.photo.key, height: 400, width: 400, crop: :pad %>
     <h2>Want to book <%= @animal.name.capitalize %>?</h2>
-    <p>A few things to know about this cutie: <%= @animal.description %> <br>Price: <%= @animal.price %> €/day.</p>
+    <p>A few things to know about this cutie: <%= @animal.description %> </p>
+    <p>Price: <%= @animal.price %> €/day.</p>
+    <p>Address: <%= @animal.address %>.</p>
     <ul>
       <a href= "<%= new_animal_booking_path(@animal) %>" class="btn btn-outline-dark">Book this cutie!</a>
       <a href= "<%= animals_path %>" class="btn btn-outline-dark">Back to the list</a>
