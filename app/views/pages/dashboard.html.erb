@@ -6,7 +6,8 @@
       width: 100, height: 100, crop: :fill, gravity: :face) %></li>
     <li><%= booking.animal.name %></li>
     <li><%= booking.date %></li>
-    <li><%= link_to "Details", to: animals_path(booking.animal) %></li>
+    <li><%= link_to "Details", animal_path(booking.animal), class: "nav-link" %></li>
+
     <li><%= link_to "Remove",
                 booking_path(booking),
                 method: :delete,
@@ -20,17 +21,16 @@
     <li><%= cl_image_tag(animal.photo.key,
       width: 100, height: 100, crop: :fill, gravity: :face) %></li>
     <li><%= animal.name %></li>
-    <li><%= link_to "Details", to: animals_path(animal) %></li>
+    <li><%= link_to "Details", animal_path(animal), class: "nav-link" %></li>
      <%= link_to "Remove",
                   animal_path(animal),
                   method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-    <%= link_to "Update",
-                  animal_path(animal),
-                  method: :update %>
+                  data: { confirm: "Are you sure?" },
+                  class: "nav-link" %>
+    <%= link_to "Update", edit_animal_path(animal), class: "nav-link" %>
   <% end %>
 </ul>
 
-<%= link_to "Add a mini crotte", new_animal_path %>
+<%= link_to "Add a mini crotte", new_animal_path, class: "nav-link" %>
 <br>
-<%= link_to "Go back", animals_path, class: "nav-link" %>
+<%= link_to "All the mini crottes", animals_path, class: "nav-link" %>

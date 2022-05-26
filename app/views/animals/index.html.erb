@@ -3,9 +3,10 @@
     <div class="col-12 col-lg-4">
       <ul>
         <% @animals.each do |animal| %>
-        <li><%= link_to animal.name, animal_path(animal) %></li>
+        <li><%= link_to animal.name, animal_path(animal), class: "nav-link" %></li>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
+
