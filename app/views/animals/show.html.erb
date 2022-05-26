@@ -3,6 +3,6 @@
 <h2>Want to book <%= @animal.name.capitalize %>?</h2>
 <p>A few things to know about this cutie: <%= @animal.description %> <br>For only: <%= @animal.price %> €/day.</p>
 <ul>
-<li><%= link_to 'Book this cutie', new_animal_booking_path(@animal) %></li>
-<li><%= link_to "Back to the list", animals_path %></li>
+<li><%= link_to 'Book this cutie', new_animal_booking_path(@animal), class: "nav-link" %></li>
+<li><%= link_to "Back to the list", animals_path, class: "nav-link" %></li>
 </ul>
