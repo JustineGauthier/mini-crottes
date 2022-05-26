@@ -1,5 +1,13 @@
 <ul>
   <% @animals.each do |animal| %>
-  <li><%= link_to animal.name, animal_path(animal) %></li>
+  <div class="card" style="width: 18rem;">
+   <div class="card-body">
+      <h5 class="card-title"><%= animal.name %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= animal.species %></h6>
+      <p class="card-text"><%= animal.description %></p>
+      <p class="card-text"><%= animal.price %></p>
+      <a href="#" class="card-link"><%= link_to animal.name, animal_path(animal) %></a>
+    </div>
+  </div>
   <% end %>
 </ul>
