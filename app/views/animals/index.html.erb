@@ -1,19 +1,22 @@
-<div class="container">
+<div class="ms-4">
   <div class='row'>
-    <div class="col-8 px-2">
-      <div class='row row-cols-3'>
+    <div class="col-8 px-2 ">
+      <div class='row'>
         <% @animals.each do |animal| %>
-          <div class="col">
-            <div class= "card border-dark mb-3 .h-100">
-              <%= link_to animal_path(animal) do %>
-                  <img class="card-img-top" src=<%= cl_image_path animal.photo.key, height: 200, width: 200, crop: :fill %> alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title"><%= animal.name %></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><%= animal.species %></h6>
-                    <p class="card-text"><%= animal.description %></p>
-                    <p class="card-text"><%= animal.price %>€/day</p>
+          <div class="col-4 my-2">
+            <div class= "card h-100 rounded-pill">
+              <div class= " border-dark m-3" >
+                <div class="text-decoration-none"><%= link_to animal_path(animal) do %>
+                    <img class="card-img-top rounded-circle" src=<%= cl_image_path animal.photo.key, height: 200, width: 200, crop: :fill %> alt="Card image cap">
+                    <div class="card-body text-center">
+                      <h5 class="card-title"><%= animal.name %></h5>
+                      <h6 class="card-subtitle mb-2 text-muted"><%= animal.species %></h6>
+                      <p class="card-text"><%= animal.description %></p>
+                      <p class="card-text"><%= animal.price %>€/day</p>
+                    </div>
                   </div>
-              <% end %>
+                <% end %>
+              </div>
             </div>
           </div>
         <% end %>
