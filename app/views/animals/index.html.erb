@@ -1,3 +1,11 @@
+<%= form_tag animals_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an animal"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 <ul>
   <% @animals.each do |animal| %>
   <div class="card" style="width: 18rem;">
