@@ -1,12 +1,12 @@
 <h1>Hey <%= @user.name %> !</h1>
-<h2>Here are all your <strong>cuttie</strong> bookings :</h2>
+<h2>Here are all your <strong>cutie</strong> bookings :</h2>
 <ul>
   <% @bookings.each do |booking| %>
     <li><%= cl_image_tag(booking.animal.photo.key,
       width: 100, height: 100, crop: :fill, gravity: :face) %></li>
     <li><%= booking.animal.name %></li>
     <li><%= booking.date %></li>
-    <li><%= link_to "Details", to: animals_path(booking.animal) %></li>
+    <li><%= link_to "Details", to: new_animal_booking_path(booking.animal) %></li>
   <% end %>
 </ul>
 
