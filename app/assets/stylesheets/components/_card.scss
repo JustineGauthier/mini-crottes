@@ -7,10 +7,12 @@
 }
 
 .card {
-  border: 4px solid #EA9ABB;
+  border-width: 2px;
+  border-color: #efadce;
 }
 
 #show {
   background-size: repeat;
   background-image: asset_url('background.jpg');
+  padding-bottom: 50px;
 }
