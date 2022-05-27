@@ -1,4 +1,17 @@
+.card-show {
+  border-radius: 180px;
+}
+
+.pet-img {
+  border-radius: 280px;
+}
+
 .card {
   border-width: 3px;
   border-color: #efadce;
+}
+
+#show {
+  background-size: repeat;
+  background-image: asset_url('background.jpg');
 }
