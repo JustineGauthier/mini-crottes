@@ -8,8 +8,8 @@
               <%= link_to animal_path(animal), class: "m-3" do %>
                 <img class="card-img-top rounded-circle" src=<%= cl_image_path animal.photo.key, height: 200, width: 200, crop: :fill %> alt="Card image cap">
                 <div class="card-body text-center">
-                  <h5 class="card-title"><strong><%= animal.name %></strong></h5>
-                  <h6 class="card-subtitle mb-2 text-muted"><%= animal.species %></h6>
+                  <h3 class="card-title"><strong><%= animal.name %></strong></h5>
+                  <h6 class="card-subtitle mb-2"><%= animal.species %></h6>
                   <p class="card-text"><%= animal.description %></p>
                   <p class="card-text"><%= animal.price %>€/day</p>
                 </div>
