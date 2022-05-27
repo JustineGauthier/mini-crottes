@@ -21,7 +21,7 @@
         <% @animals.each do |animal| %>
           <div class="col-4 my-2">
             <div class= "card h-100 rounded-pill">
-              <%= link_to animal_path(animal), class: "text-dark m-3" do %>
+              <%= link_to animal_path(animal), class: "m-3" do %>
                 <img class="card-img-top rounded-circle" src=<%= cl_image_path animal.photo.key, height: 200, width: 200, crop: :fill %> alt="Card image cap">
                 <div class="card-body text-center">
                   <h5 class="card-title"><strong><%= animal.name %></strong></h5>
