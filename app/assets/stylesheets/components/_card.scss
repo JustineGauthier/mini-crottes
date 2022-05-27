@@ -17,3 +17,8 @@
   background-image: asset_url('background.jpg');
   padding-bottom: 50px;
 }
+
+#back-index{
+  background-size: repeat;
+  background-image: linear-gradient(to bottom, rgba(252, 231, 230,0.6) 100%,rgba(252, 231, 230,0.6) 100%), asset_url('background.jpg');
+}
