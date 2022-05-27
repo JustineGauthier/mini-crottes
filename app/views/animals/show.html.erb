@@ -4,7 +4,7 @@
         <h1 class="p-4">Wow, <%= @animal.name.capitalize %> is the cutest!</h1>
         <div class="card card-show align-items-center p-4 border-2">
           <div class="m-3 w-50">
-            <img class="card-img-top pet-img" src=<%= cl_image_path @animal.photo.key, height: 120, width: 150, crop: :fill %> alt="Card image cap">
+            <%= cl_image_tag @animal.photo.key, class: 'pet-img', crop: :fill %>
           </div>
           <div class="card-body w-100">
             <p><%= @animal.description %></p>
