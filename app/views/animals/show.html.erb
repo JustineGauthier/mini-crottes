@@ -1,16 +1,13 @@
-<div class="has-bg-img">
+<div class="container has-bg-img">
   <%# le background-img ne foncctionne pas %>
   <img class="bg-img" src="../../images/background.jpg" alt="...">
-
-  <div class="row row-cols-8">
-    <div class="col text-center mx-5 p-5">
+  <div class="d-flex justify-content-center">
+    <div class="text-center">
       <h1>Wow, <%= @animal.name.capitalize %> is the cutest!</h1>
-
-      <div class="card row-cols-8 rounded">
-      <div class="card-img-top img-thumbnail">
-        <%= cl_image_tag @animal.photo.key, crop: :pad %>
-      </div>
-
+      <div class="card">
+        <div class="">
+          <img class="card-img-top rounded-circle" src=<%= cl_image_path @animal.photo.key, height: 200, width: 200, crop: :fill %> alt="Card image cap">
+        </div>
         <div class="card-body text-center">
           <p><%= @animal.description %></p>
         </div>
@@ -18,7 +15,6 @@
           <p>Price: <%= @animal.price %> €/day.</p>
           <p>Address: <%= @animal.address %>.</p>
         </div>
-
       </div>
     </div>
   </div>
