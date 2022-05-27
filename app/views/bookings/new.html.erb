@@ -1,4 +1,12 @@
-<%= simple_form_for [ @animal, @booking] , url: animal_bookings_path, method: :post do |f| %>
-  <%= f.input :date, as: :date, html5: true %>
-  <%= f.submit "Book this cutie!", class: "btn btn-primary" %>
-<% end %>
+<div id="show">
+  <div class="container container-show">
+    <div class="w-100 text-center">
+    <h1>Yay! <%= @animal.name %> is almost yours!</h1>
+    <p>Choose the date you want this perfect <%= @animal.species %></p>
+      <%= simple_form_for [ @animal, @booking] , url: animal_bookings_path, method: :post do |f| %>
+        <%= f.input :date, as: :date, html5: true %>
+        <%= f.submit "Book this cutie!", class: "btn btn btn-ghost pt-2 px-3 border-2 w-40" %>
+      <% end %>
+    </div>
+  </div>
+</div>
