@@ -1,7 +1,7 @@
 <div class="ms-4">
   <div class='row'>
     <div class="col-8 px-2 ">
-      <div class='row'>
+      <div class='row mt-2'>
         <% @animals.each do |animal| %>
           <div class="col-4 my-2">
             <div class= "card h-100 rounded-pill">
@@ -19,11 +19,11 @@
         <% end %>
       </div>
     </div>
-    <div class='col-4'>
-      <div id="map" style="width: 100%; height: 100vh;"
-        data-controller="mapbox"
-        data-mapbox-markers-value="<%= @markers.to_json %>"
-        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+  <div class='col-4'>
+    <div id="map" style="width: 100%; height: 100vh;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
+</div>
