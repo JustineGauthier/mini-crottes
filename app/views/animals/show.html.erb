@@ -1,31 +1,23 @@
-<div class="has-bg-img">
-  <%# le background-img ne foncctionne pas %>
-  <img class="bg-img" src="../../images/background.jpg" alt="...">
-
-  <div class="row row-cols-8">
-    <div class="col text-center mx-5 p-5">
-      <h1>Wow, <%= @animal.name.capitalize %> is the cutest!</h1>
-
-      <div class="card row-cols-8 rounded">
-      <div class="card-img-top img-thumbnail">
-        <%= cl_image_tag @animal.photo.key, crop: :pad %>
-      </div>
-
-        <div class="card-body text-center">
-          <p><%= @animal.description %></p>
+<div id="show">
+  <div class="container container-show">
+    <div class="w-100 text-center">
+        <h1 class="p-4">Wow, <%= @animal.name.capitalize %> is the cutest!</h1>
+        <div class="card card-show align-items-center p-4 border-2">
+          <div class="m-3 w-50">
+            <img class="card-img-top pet-img" src=<%= cl_image_path @animal.photo.key, height: 120, width: 150, crop: :fill %> alt="Card image cap">
+          </div>
+          <div class="card-body w-100">
+            <p><%= @animal.description %></p>
+            <div>
+              <p>Price: <%= @animal.price %> €/day.</p>
+              <p>Address: <%= @animal.address %>.</p>
+            </div>
+            <div class="w-100 d-flex justify-content-center">
+                <a href= "<%= new_animal_booking_path(@animal) %>" class="btn btn-ghost mx-5 p-2 border-2">Book this cutie!</a>
+                <a href= "<%= animals_path %>" class="btn btn-ghost mx-5 p-2 border-2">Back to the list</a>
+            </div>
+          </div>
         </div>
-        <div>
-          <p>Price: <%= @animal.price %> €/day.</p>
-          <p>Address: <%= @animal.address %>.</p>
-        </div>
-
-      </div>
     </div>
-  </div>
-  <div>
-      <ul class="d-flex justify-content-around mx-5 mt-4">
-        <a href= "<%= new_animal_booking_path(@animal) %>" class="btn btn-outline-dark">Book this cutie!</a>
-        <a href= "<%= animals_path %>" class="btn btn-outline-dark">Back to the list</a>
-      </ul>
   </div>
 </div>
