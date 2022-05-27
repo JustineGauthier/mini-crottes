@@ -2,3 +2,9 @@
   background-size: repeat;
   background-image: asset_url('background.jpg');
 }
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
