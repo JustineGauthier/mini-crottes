@@ -1,7 +1,7 @@
 <div id="show">
   <div class="container container-show">
     <div class="w-100 text-center">
-        <h1 class="p-4">Wow, <%= @animal.name.capitalize %> is the cutest!</h1>
+        <h1 class="p-4"><strong>Wow, <%= @animal.name.capitalize %> is the cutest!</strong></h1>
         <div class="card card-show align-items-center p-4 border-2">
           <div class="m-3 w-50">
             <img class="card-img-top pet-img" src=<%= cl_image_path @animal.photo.key, height: 120, width: 150, crop: :fill %> alt="Card image cap">
@@ -9,8 +9,8 @@
           <div class="card-body w-100">
             <p><%= @animal.description %></p>
             <div>
-              <p>Price: <%= @animal.price %> €/day.</p>
-              <p>Address: <%= @animal.address %>.</p>
+              <p><strong>Price:</strong> <%= @animal.price %> €/day.</p>
+              <p><strong>Address:</strong> <%= @animal.address %>.</p>
             </div>
             <div class="w-100 d-flex justify-content-center">
                 <a href= "<%= new_animal_booking_path(@animal) %>" class="btn btn-ghost btn-lg mx-5">Book this cutie!</a>
